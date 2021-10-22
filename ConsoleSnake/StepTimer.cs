@@ -10,7 +10,7 @@ namespace ConsoleSnake
 {
     class StepTimer
     {
-        Timer timer = null;
+        public Timer timer = null;
 
         private int __interval = 2500;
         private int __delay = 0;

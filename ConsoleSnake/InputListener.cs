@@ -7,16 +7,18 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    public static class InputListener
+    public class InputListener
     {
+        static bool continueListening = true;
+        static StepTimer timer = new StepTimer(250, 250);
         public static void Listen(object snakeInitPos)
         {
             ConsoleKeyInfo keyInfo;
             SnakeActions snakeControl = new SnakeActions();
             Snake snake = (Snake)snakeInitPos;
-            StepTimer timer = new StepTimer(250, 250);
 
-            while (true)
+
+            while (continueListening)
             {
                 keyInfo = Console.ReadKey(true);
                 if (keyInfo.Key == ConsoleKey.W)
@@ -38,5 +40,12 @@ namespace ConsoleSnake
 
             }
         }
+
+        public static void StopListening()
+        {
+            timer.timer.Dispose();
+            continueListening = false;
+        }
+
     }
 }
