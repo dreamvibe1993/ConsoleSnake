@@ -10,7 +10,7 @@ namespace ConsoleSnake
     {
         public int posX;
         public int posY;
-        public int length;
+        public int length = 1;
         public Snake (int x, int y)
         {
             posX = x;

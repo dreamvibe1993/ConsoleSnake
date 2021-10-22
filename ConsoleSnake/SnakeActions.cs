@@ -17,6 +17,7 @@ namespace ConsoleSnake
             DisplayActions.ErasePoint(snake);
             snake.posY -= 1;
             DisplayActions.DrawPoint(snake);
+            Checks.CheckIfAteFruit(snake);
         }
 
         public void MoveDown(Snake snake)
@@ -24,6 +25,7 @@ namespace ConsoleSnake
             DisplayActions.ErasePoint(snake);
             snake.posY += 1;
             DisplayActions.DrawPoint(snake);
+            Checks.CheckIfAteFruit(snake);
         }
 
         public void MoveRight(Snake snake)
@@ -31,6 +33,7 @@ namespace ConsoleSnake
             DisplayActions.ErasePoint(snake);
             snake.posX += 1;
             DisplayActions.DrawPoint(snake);
+            Checks.CheckIfAteFruit(snake);
         }
 
         public void MoveLeft(Snake snake)
@@ -38,6 +41,7 @@ namespace ConsoleSnake
             DisplayActions.ErasePoint(snake);
             snake.posX -= 1;
             DisplayActions.DrawPoint(snake);
+            Checks.CheckIfAteFruit(snake);
         }
     }
 }

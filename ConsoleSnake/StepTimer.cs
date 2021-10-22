@@ -51,7 +51,9 @@ namespace ConsoleSnake
 
             timer = new Timer((fuckoff) =>
             {
-                FruitActions.DrawFruit();
+
+                FruitActions fruitActions = new FruitActions();
+                fruitActions.DrawFruit();
             },
             null,
             __delay,
