@@ -8,8 +8,8 @@ namespace ConsoleSnake
 {
     class Fruit
     {
-        int posX;
-        int posY;
+        public int posX;
+        public int posY;
         public Fruit(int x, int y)
         {
             posX = x;

@@ -22,7 +22,7 @@ namespace ConsoleSnake
             __interval = interval;
             __delay = delay;
         }
-        public void RepeatAction(MovingActionDelegate action, Snake snake, ConsoleKey key)
+        public void RepeatAction(MovingSnakeActionDelegate action, Snake snake, ConsoleKey key)
         {
             if (key == keyPressedFirstTime) return;
 
@@ -36,6 +36,22 @@ namespace ConsoleSnake
             timer = new Timer((fuckoff) =>
             {
                 action(snake);
+            },
+            null,
+            __delay,
+            __interval
+                );
+        }
+        public void RepeatAction()
+        {
+            if (timer != null)
+            {
+                timer.Dispose();
+            }
+
+            timer = new Timer((fuckoff) =>
+            {
+                FruitActions.DrawFruit();
             },
             null,
             __delay,
