@@ -23,19 +23,19 @@ namespace ConsoleSnake
                 keyInfo = Console.ReadKey(true);
                 if (keyInfo.Key == ConsoleKey.W)
                 {
-                    timer.RepeatAction(snakeControl.MoveUp, snake, keyInfo.Key);
+                    timer.RepeatSnakeAction(snakeControl.MoveUp, snake, keyInfo.Key);
                 }
                 if (keyInfo.Key == ConsoleKey.A)
                 {
-                    timer.RepeatAction(snakeControl.MoveLeft, snake, keyInfo.Key);
+                    timer.RepeatSnakeAction(snakeControl.MoveLeft, snake, keyInfo.Key);
                 }
                 if (keyInfo.Key == ConsoleKey.S)
                 {
-                    timer.RepeatAction(snakeControl.MoveDown, snake, keyInfo.Key);
+                    timer.RepeatSnakeAction(snakeControl.MoveDown, snake, keyInfo.Key);
                 }
                 if (keyInfo.Key == ConsoleKey.D)
                 {
-                    timer.RepeatAction(snakeControl.MoveRight, snake, keyInfo.Key);
+                    timer.RepeatSnakeAction(snakeControl.MoveRight, snake, keyInfo.Key);
                 }
 
             }

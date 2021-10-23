@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    public class Snake
+    public class Snake : Coords
     {
-        public int posX;
-        public int posY;
-        public int length = 1;
+        public int length = 0;
         public Snake (int x, int y)
         {
             posX = x;
