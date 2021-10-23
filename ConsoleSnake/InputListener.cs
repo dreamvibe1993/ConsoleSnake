@@ -40,7 +40,6 @@ namespace ConsoleSnake
 
             }
         }
-
         public static void StopListening()
         {
             timer.timer.Dispose();

@@ -12,15 +12,15 @@ namespace ConsoleSnake
     {
         public Timer timer = null;
 
-        private int __interval = 2500;
-        private int __delay = 0;
+        private int interval = 2500;
+        private int delay = 0;
 
         private ConsoleKey keyPressedFirstTime;
 
         public StepTimer(int interval, int delay)
         {
-            __interval = interval;
-            __delay = delay;
+            this.interval = interval;
+            this.delay = delay;
         }
         public void RepeatAction(MovingSnakeActionDelegate action, Snake snake, ConsoleKey key)
         {
@@ -33,32 +33,20 @@ namespace ConsoleSnake
 
             keyPressedFirstTime = key;
 
-            timer = new Timer((fuckoff) =>
+            timer = TimerActions.SetNewTimer((fuckoff) =>
             {
                 action(snake);
-            },
-            null,
-            __delay,
-            __interval
-                );
+            }, null, delay, interval);
+
         }
         public void RepeatAction()
         {
-            if (timer != null)
+            timer = TimerActions.SetNewTimer((fuckoff) =>
             {
-                timer.Dispose();
-            }
-
-            timer = new Timer((fuckoff) =>
-            {
-
                 FruitActions fruitActions = new FruitActions();
                 fruitActions.DrawFruit();
-            },
-            null,
-            __delay,
-            __interval
-                );
+            }, null, delay, interval);
+
         }
     }
 }
