@@ -16,7 +16,18 @@ namespace ConsoleSnake
 
             Random randomY = new Random();
 
+
             Fruit fruit = new Fruit(randomX.Next(1, Display.Width), randomY.Next(2, Display.Height));
+
+            bool isFruitCoordsOccupated = DisplayActions.drawnPoints.Exists((point) => fruit.posX == point.posX && fruit.posY == point.posY);
+
+            if (isFruitCoordsOccupated)
+            {
+                Console.SetCursorPosition(60, 50);
+                Console.Write("REDRAW");
+                DrawFruit();
+                return;
+            }
 
             fruitsOnDisplay.Add(fruit);
 
