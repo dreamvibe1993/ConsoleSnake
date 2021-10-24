@@ -11,10 +11,11 @@ namespace ConsoleSnake
 
             Display.Width = 30;
             Display.Height = 30 / 2;
-            StepTimer timerForFruitAddition = new StepTimer(8000, 500);
+            TimerActions TimerAction = new TimerActions(8000, 500);
 
-            Snake snake = new Snake(1, 2);
+            Snake Snake = new Snake(1, 2);
 
+            Console.CursorVisible = false;
 
             DisplayActions.DrawTopBoundary();
             DisplayActions.DrawRightBoundary();
@@ -24,9 +25,9 @@ namespace ConsoleSnake
             Console.SetCursorPosition(40, 10);
             Console.Write("Score: ");
 
-            timerForFruitAddition.RepeatFruitCreationAction();
-            Threads.SetTimers(timerForFruitAddition.timer);
-            InputListener.Listen(snake);
+            TimerAction.RepeatFruitCreationAction();
+            Threads.SetTimers(TimerAction.Timer);
+            InputListener.Listen(Snake);
 
         }
     }
