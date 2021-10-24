@@ -16,7 +16,7 @@ namespace ConsoleSnake
             ConsoleKeyInfo keyInfo;
             SnakeActions snakeControl = new SnakeActions();
             Snake snake = (Snake)snakeInitPos;
-
+            DisplayActions.AddToCoordsHistory(snake);
 
             while (continueListening)
             {

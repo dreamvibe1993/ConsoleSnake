@@ -45,13 +45,15 @@ namespace ConsoleSnake
 
         public static void ErasePoint(Snake snake)
         {
-            Console.SetCursorPosition(30, 10);
-            Console.Write(drawnPoints.Count);
+            Console.SetCursorPosition(40, 8);
+            Console.Write($"drawn points count: {drawnPoints.Count}");
+            Console.SetCursorPosition(40, 7);
+            Console.Write($"snake length: {snake.length}");
             Coords coords = new Coords() { posX = 2, posY = 2 };
 
             if (drawnPoints.Count > 0)
             {
-                coords = drawnPoints.ElementAt(drawnPoints.Count - 1 - snake.length);
+                coords = drawnPoints.ElementAt(0);
             }
 
             Console.SetCursorPosition(coords.posX, coords.posY);
@@ -60,9 +62,18 @@ namespace ConsoleSnake
 
         public static void DrawPoint(Snake snake)
         {
+            AddToCoordsHistory(snake);
             Console.SetCursorPosition(snake.posX, snake.posY);
-            Console.Write('█');
+            Console.Write('*');
+        }
+
+        public static void AddToCoordsHistory(Snake snake)
+        {
             drawnPoints.Add(new Coords() { posX = snake.posX, posY = snake.posY });
+            if (drawnPoints.Count > snake.length + 1)
+            {
+                drawnPoints.RemoveAt(0);
+            }
         }
     }
 }
