@@ -8,12 +8,13 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
+            StartingDisplay.DrawLogo();
 
-            Game SnakeGame = new Game();
+            //Game SnakeGame = new Game();
 
-            SnakeGame.Configure();
+            //SnakeGame.Configure();
 
-            SnakeGame.StartGame();
+            //SnakeGame.StartGame();
 
         }
     }

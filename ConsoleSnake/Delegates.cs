@@ -6,10 +6,12 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    class Delegates
+    public class Delegates
     {
         public delegate void MovingSnakeActionDelegate(Snake Snake);
 
         public delegate void AddingFruitActionDelegate();
+
+        public delegate void KeyPressedHandler(ConsoleKey Key);
     }
 }
