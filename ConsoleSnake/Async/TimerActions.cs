@@ -15,41 +15,41 @@ namespace ConsoleSnake
         private int interval = 2500;
         private int delay = 0;
 
-        private ConsoleKey keyPressedFirstTime;
+        private ConsoleKey KeyPressedFirstTime;
 
         public TimerActions(int interval, int delay)
         {
             this.interval = interval;
             this.delay = delay;
         }
-        public void RepeatSnakeAction(MovingSnakeActionDelegate action, Snake snake, ConsoleKey key)
+        public void RepeatSnakeAction(MovingSnakeActionDelegate MoveSnake, Snake Snake, ConsoleKey Key)
         {
-            if (key == keyPressedFirstTime) return;
-            if (snake.Length > 0 && key == ConsoleKey.W && keyPressedFirstTime == ConsoleKey.S) return;
-            if (snake.Length > 0 && key == ConsoleKey.S && keyPressedFirstTime == ConsoleKey.W) return;
-            if (snake.Length > 0 && key == ConsoleKey.A && keyPressedFirstTime == ConsoleKey.D) return;
-            if (snake.Length > 0 && key == ConsoleKey.D && keyPressedFirstTime == ConsoleKey.A) return;
+            if (Key == KeyPressedFirstTime) return;
 
+            if (Snake.Length > 0 && Key == ConsoleKey.W && KeyPressedFirstTime == ConsoleKey.S) return;
+            if (Snake.Length > 0 && Key == ConsoleKey.S && KeyPressedFirstTime == ConsoleKey.W) return;
+            if (Snake.Length > 0 && Key == ConsoleKey.A && KeyPressedFirstTime == ConsoleKey.D) return;
+            if (Snake.Length > 0 && Key == ConsoleKey.D && KeyPressedFirstTime == ConsoleKey.A) return;
 
+            KeyPressedFirstTime = Key;
             if (Timer != null)
             {
                 Timer.Dispose();
             }
 
-            keyPressedFirstTime = key;
 
             Timer = SetNewTimer((fuckoff) =>
             {
-                action(snake);
-            }, null, delay, interval);
+                MoveSnake(Snake);
+            }, null, 1, interval);
 
         }
         public void RepeatFruitCreationAction()
         {
             Timer = SetNewTimer((fuckoff) =>
             {
-                FruitActions fruitActions = new FruitActions();
-                fruitActions.DrawFruit();
+                FruitActions FruitActions = new FruitActions();
+                FruitActions.DrawFruit();
             }, null, delay, interval);
 
         }

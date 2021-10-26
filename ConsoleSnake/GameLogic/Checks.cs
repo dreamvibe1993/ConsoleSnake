@@ -41,7 +41,8 @@ namespace ConsoleSnake
             {
                 Threads.DropAllTimers();
                 InputListener.StopListening();
-                Console.WriteLine("LOSE");
+                Console.SetCursorPosition(40, 5);
+                Console.Write($"SNEK ATE HIMSELF");
             }
         }
 
@@ -54,10 +55,12 @@ namespace ConsoleSnake
             {
                 Snake.Length++;
                 FruitActions.FruitsCurrentlyOnDisplay.Remove(eatenFruit);
-                Console.SetCursorPosition(40, 10);
+                Console.SetCursorPosition(40, 5);
                 Console.Write($"Score: {Snake.Length}");
                 Console.SetCursorPosition(40, 11);
                 Console.Write($"Fruits history: {FruitActions.FruitsCurrentlyOnDisplay.Count}");
+                Console.SetCursorPosition(40, 12);
+                Console.Write($"Drawn points history: {GameDisplayActions.DrawnPointsHistory.Count}");
             }
         }
     }

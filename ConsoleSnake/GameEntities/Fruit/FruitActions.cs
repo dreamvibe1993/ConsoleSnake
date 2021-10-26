@@ -19,11 +19,10 @@ namespace ConsoleSnake
 
             Fruit Fruit = new Fruit(RandomX.Next(1, GameDisplay.Width), RandomY.Next(2, GameDisplay.Height));
 
-            bool IsFruitCoordsOccupated = GameDisplayActions.DrawnPointsHistory.Exists((point) => Fruit.PosX == point.PosX && Fruit.PosY == point.PosY);
+            Coords IsFruitCoordsOccupated = GameDisplayActions.DrawnPointsHistory.Find((point) => Fruit.PosX == point.PosX && Fruit.PosY == point.PosY);
 
-            if (IsFruitCoordsOccupated)
+            if (IsFruitCoordsOccupated != null)
             {
-                DrawFruit();
                 return;
             }
 
