@@ -25,32 +25,19 @@ namespace ConsoleSnake
                 Console.SetCursorPosition(Console.CursorLeft + 4, Console.CursorTop);
             }
             Console.SetCursorPosition(Console.CursorLeft + 6, Console.CursorTop);
-            for (int i = 1; i < 6; i++)
-            {
-                if (i % 2 == 0)
-                {
-                    Console.WriteLine(GameTitle.ToLower());
-                    Console.SetCursorPosition(Console.CursorLeft + 10, Console.CursorTop - 1);
-                    System.Threading.Thread.Sleep(250);
-                }
-                else
-                {
-                    Console.WriteLine(GameTitle);
-                    Console.SetCursorPosition(Console.CursorLeft + 10, Console.CursorTop - 1);
-                    System.Threading.Thread.Sleep(250);
-                }
 
-            }
+            Blinker.Blink(GameTitle);
+
             Console.SetCursorPosition(Console.CursorLeft - 10, Console.CursorTop + 1);
-            for (int i = 0; i < GameSubtitle.Length; i++)
-            {
-                Console.Write(GameSubtitle[i]);
-                System.Threading.Thread.Sleep(20);
-            }
+
+            TypeWriter.Type(GameSubtitle);
+
             System.Threading.Thread.Sleep(100);
+
             Console.SetCursorPosition(7, Console.CursorTop + 1);
             Console.SetCursorPosition(7, Console.CursorTop + 1);
             Console.WriteLine("PRESS ENTER");
+
             InputListener.ListenToKeyPress(() =>
             {
                 Console.Clear();

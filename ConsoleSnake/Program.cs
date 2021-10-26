@@ -8,13 +8,9 @@ namespace ConsoleSnake
     {
         static void Main(string[] args)
         {
+            Console.CursorVisible = false;
+
             StartingDisplay.DrawLogo();
-
-            //Game SnakeGame = new Game();
-
-            //SnakeGame.Configure();
-
-            //SnakeGame.StartGame();
 
         }
     }

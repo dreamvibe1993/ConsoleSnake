@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleSnake
@@ -19,12 +20,16 @@ namespace ConsoleSnake
             {
                 Threads.DropAllTimers();
                 InputListener.StopListening();
+                Thread.Sleep(500);
+                GameOverDisplay.InformPlayerThatTheyLose("Your snek crashed into the wall!");
             }
 
             if (Snake.PosY < 1 || Snake.PosY > GameDisplay.Height - 1)
             {
                 Threads.DropAllTimers();
                 InputListener.StopListening();
+                Thread.Sleep(500);
+                GameOverDisplay.InformPlayerThatTheyLose("Your snek crashed into the wall!");
             }
         }
 
@@ -41,8 +46,8 @@ namespace ConsoleSnake
             {
                 Threads.DropAllTimers();
                 InputListener.StopListening();
-                Console.SetCursorPosition(40, 5);
-                Console.Write($"SNEK ATE HIMSELF");
+                Thread.Sleep(500);
+                GameOverDisplay.InformPlayerThatTheyLose("Your snek bit himself!");
             }
         }
 
@@ -55,12 +60,6 @@ namespace ConsoleSnake
             {
                 Snake.Length++;
                 FruitActions.FruitsCurrentlyOnDisplay.Remove(eatenFruit);
-                Console.SetCursorPosition(40, 5);
-                Console.Write($"Score: {Snake.Length}");
-                Console.SetCursorPosition(40, 11);
-                Console.Write($"Fruits history: {FruitActions.FruitsCurrentlyOnDisplay.Count}");
-                Console.SetCursorPosition(40, 12);
-                Console.Write($"Drawn points history: {GameDisplayActions.DrawnPointsHistory.Count}");
             }
         }
     }

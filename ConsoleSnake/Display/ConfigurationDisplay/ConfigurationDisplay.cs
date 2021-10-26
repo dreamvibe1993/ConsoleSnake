@@ -29,9 +29,11 @@ namespace ConsoleSnake
 
         public static void AskHowHard()
         {
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 1);
-            Console.SetCursorPosition(Console.CursorLeft, Console.CursorTop + 1);
-            Console.WriteLine("Choose your level. \nPress 1 for easy, \n2 for normal, \n3 for hard, \n4 for nuts mode.");
+            Console.SetCursorPosition(2, Console.CursorTop + 1);
+            Console.SetCursorPosition(2, Console.CursorTop + 1);
+
+            Console.Write("Choose your level. \n  Press 1 for easy, \n  2 for normal, \n  3 for hard, \n  4 for nuts mode.");
+
             InputListener.ListenToKeysPress((ConsoleKey key) =>
             {
                 Intervals = TimerIntervals.GetValueOrDefault(key);
@@ -45,7 +47,7 @@ namespace ConsoleSnake
             }
 
             Console.Clear();
-            Console.SetCursorPosition(GameDisplay.Width / 2 - 10, GameDisplay.Height / 2);
+            Console.SetCursorPosition(2, GameDisplay.Height / 4);
             Console.WriteLine($"{Level}");
             Thread.Sleep(1500);
             Console.Clear();
