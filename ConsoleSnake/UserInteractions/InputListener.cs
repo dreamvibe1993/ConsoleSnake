@@ -13,33 +13,33 @@ namespace ConsoleSnake
         static bool ContinueListening = true;
         static TimerActions Timer = new TimerActions(250, 250);
 
-        public static void ListenWASD(Snake Snake)
+        public static void ListenWASD()
         {
             ConsoleKeyInfo KeyInfo;
             SnakeActions SnakeControl = new SnakeActions();
 
             Timer = new TimerActions(Snake.SpeedIntervals[0], Snake.SpeedIntervals[1]);
 
-            GameDisplayActions.AddToCoordsHistory(Snake);
+            GameDisplayActions.AddToCoordsHistory();
 
             while (ContinueListening)
             {
                 KeyInfo = Console.ReadKey(true);
                 if (KeyInfo.Key == ConsoleKey.W)
                 {
-                    Timer.RepeatSnakeAction(SnakeControl.MoveUp, Snake, KeyInfo.Key);
+                    Timer.RepeatSnakeAction(SnakeControl.MoveUp, KeyInfo.Key);
                 }
                 if (KeyInfo.Key == ConsoleKey.A)
                 {
-                    Timer.RepeatSnakeAction(SnakeControl.MoveLeft, Snake, KeyInfo.Key);
+                    Timer.RepeatSnakeAction(SnakeControl.MoveLeft, KeyInfo.Key);
                 }
                 if (KeyInfo.Key == ConsoleKey.S)
                 {
-                    Timer.RepeatSnakeAction(SnakeControl.MoveDown, Snake, KeyInfo.Key);
+                    Timer.RepeatSnakeAction(SnakeControl.MoveDown, KeyInfo.Key);
                 }
                 if (KeyInfo.Key == ConsoleKey.D)
                 {
-                    Timer.RepeatSnakeAction(SnakeControl.MoveRight, Snake, KeyInfo.Key);
+                    Timer.RepeatSnakeAction(SnakeControl.MoveRight, KeyInfo.Key);
                 }
 
             }
@@ -66,7 +66,6 @@ namespace ConsoleSnake
         public static void ListenToKeysPress(KeyPressedHandler Action, ConsoleKey[] Keys)
         {
             ConsoleKeyInfo KeyInfo = Console.ReadKey(true);
-
             while (true)
             {
                 if (Keys.Contains(KeyInfo.Key))

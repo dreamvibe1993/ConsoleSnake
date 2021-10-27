@@ -41,9 +41,8 @@ namespace ConsoleSnake
             InputListener.ListenToKeyPress(() =>
             {
                 Console.Clear();
-                Game SnakeGame = new Game();
-                SnakeGame.Configure();
-                SnakeGame.StartGame();
+                Game.Configure();
+                Game.StartGame();
             }, ConsoleKey.Enter);
         }
 

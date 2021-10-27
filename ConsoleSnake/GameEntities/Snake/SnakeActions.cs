@@ -8,48 +8,48 @@ namespace ConsoleSnake
 {
     public class SnakeActions
     {
-        public void MoveToInitialPosition(Snake Snake)
+        public void MoveToInitialPosition()
         {
-            GameDisplayActions.DrawPoint(Snake);
+            GameDisplayActions.DrawPoint();
         }
-        public void MoveUp(Snake Snake)
+        public void MoveUp()
         {
-            GameDisplayActions.ErasePoint(Snake);
-            GameDisplayActions.DrawPoint(Snake);
+            GameDisplayActions.ErasePoint();
+            GameDisplayActions.DrawPoint();
             Snake.PosY -= 1;
-            Checks.CheckIfOutOfBounds(Snake);
-            Checks.CheckIfAteItself(Snake);
-            Checks.CheckIfAteFruit(Snake);
+            Checks.CheckIfOutOfBounds();
+            Checks.CheckIfAteItself();
+            Checks.CheckIfAteFruit();
         }
 
-        public void MoveDown(Snake Snake)
+        public void MoveDown()
         {
-            GameDisplayActions.ErasePoint(Snake);
-            GameDisplayActions.DrawPoint(Snake);
+            GameDisplayActions.ErasePoint();
+            GameDisplayActions.DrawPoint();
             Snake.PosY += 1;
-            Checks.CheckIfOutOfBounds(Snake);
-            Checks.CheckIfAteItself(Snake);
-            Checks.CheckIfAteFruit(Snake);
+            Checks.CheckIfOutOfBounds();
+            Checks.CheckIfAteItself();
+            Checks.CheckIfAteFruit();
         }
 
-        public void MoveRight(Snake Snake)
+        public void MoveRight()
         {
-            GameDisplayActions.ErasePoint(Snake);
-            GameDisplayActions.DrawPoint(Snake);
+            GameDisplayActions.ErasePoint();
+            GameDisplayActions.DrawPoint();
             Snake.PosX += 1;
-            Checks.CheckIfOutOfBounds(Snake);
-            Checks.CheckIfAteItself(Snake);
-            Checks.CheckIfAteFruit(Snake);
+            Checks.CheckIfOutOfBounds();
+            Checks.CheckIfAteItself();
+            Checks.CheckIfAteFruit();
         }
 
-        public void MoveLeft(Snake Snake)
+        public void MoveLeft()
         {
-            GameDisplayActions.ErasePoint(Snake);
-            GameDisplayActions.DrawPoint(Snake);
+            GameDisplayActions.ErasePoint();
+            GameDisplayActions.DrawPoint();
             Snake.PosX -= 1;
-            Checks.CheckIfOutOfBounds(Snake);
-            Checks.CheckIfAteItself(Snake);
-            Checks.CheckIfAteFruit(Snake);
+            Checks.CheckIfOutOfBounds();
+            Checks.CheckIfAteItself();
+            Checks.CheckIfAteFruit();
         }
     }
 }

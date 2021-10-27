@@ -43,7 +43,7 @@ namespace ConsoleSnake
             }
         }
 
-        public static void ErasePoint(Snake Snake)
+        public static void ErasePoint()
         {
             Coords Coords = new Coords() { PosX = Snake.PosX, PosY = Snake.PosY };
 
@@ -56,14 +56,14 @@ namespace ConsoleSnake
             Console.Write(' ');
         }
 
-        public static void DrawPoint(Snake Snake)
+        public static void DrawPoint()
         {
-            AddToCoordsHistory(Snake);
+            AddToCoordsHistory();
             Console.SetCursorPosition(Snake.PosX, Snake.PosY);
             Console.Write('*');
         }
 
-        public static void AddToCoordsHistory(Snake Snake)
+        public static void AddToCoordsHistory()
         {
             DrawnPointsHistory.Add(new Coords() { PosX = Snake.PosX, PosY = Snake.PosY });
             if (DrawnPointsHistory.Count > Snake.Length + 1)

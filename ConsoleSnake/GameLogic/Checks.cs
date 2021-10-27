@@ -14,7 +14,7 @@ namespace ConsoleSnake
 
         }
 
-        public static void CheckIfOutOfBounds(Snake Snake)
+        public static void CheckIfOutOfBounds()
         {
             if (Snake.PosX < 1 || Snake.PosX > GameDisplay.Width - 1)
             {
@@ -33,7 +33,7 @@ namespace ConsoleSnake
             }
         }
 
-        public static void CheckIfAteItself(Snake Snake)
+        public static void CheckIfAteItself()
         {
 
             if (GameDisplayActions.DrawnPointsHistory.Count < 5) return;
@@ -51,7 +51,7 @@ namespace ConsoleSnake
             }
         }
 
-        public static void CheckIfAteFruit(Snake Snake)
+        public static void CheckIfAteFruit()
         {
             Fruit eatenFruit = FruitActions.FruitsCurrentlyOnDisplay.Find(
                 fruit => fruit.PosX == Snake.PosX && fruit.PosY == Snake.PosY

@@ -6,12 +6,10 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    public class Game
+    public static class Game
     {
-        TimerActions TimerAction;
-
-        Snake Snake;
-        public void Configure()
+        static TimerActions TimerAction;
+        public static void Configure()
         {
 
             GameDisplay.Width = 30;
@@ -21,12 +19,13 @@ namespace ConsoleSnake
 
             TimerAction = new TimerActions(ConfigurationDisplay.Intervals[0], ConfigurationDisplay.Intervals[1]);
 
-            Snake = new Snake(GameDisplay.Width / 2, GameDisplay.Height / 2);
+            Snake.PosX = GameDisplay.Width / 2;
+            Snake.PosY = GameDisplay.Height / 2;
 
             Snake.SpeedIntervals = new int[] { ConfigurationDisplay.Intervals[2], ConfigurationDisplay.Intervals[3] };
 
         }
-        public void StartGame()
+        public static void StartGame()
         {
 
 
@@ -40,7 +39,7 @@ namespace ConsoleSnake
 
             TimerAction.RepeatFruitCreationAction();
             Threads.AddToTimersCollection(TimerAction.Timer);
-            InputListener.ListenWASD(Snake);
+            InputListener.ListenWASD();
         }
     }
 }

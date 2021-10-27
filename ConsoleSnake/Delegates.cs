@@ -8,7 +8,7 @@ namespace ConsoleSnake
 {
     public class Delegates
     {
-        public delegate void MovingSnakeActionDelegate(Snake Snake);
+        public delegate void MovingSnakeActionDelegate();
 
         public delegate void AddingFruitActionDelegate();
 

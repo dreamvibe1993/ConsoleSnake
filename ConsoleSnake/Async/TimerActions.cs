@@ -22,7 +22,7 @@ namespace ConsoleSnake
             this.interval = interval;
             this.delay = delay;
         }
-        public void RepeatSnakeAction(MovingSnakeActionDelegate MoveSnake, Snake Snake, ConsoleKey Key)
+        public void RepeatSnakeAction(MovingSnakeActionDelegate MoveSnake, ConsoleKey Key)
         {
             if (Key == KeyPressedFirstTime) return;
 
@@ -40,7 +40,7 @@ namespace ConsoleSnake
 
             Timer = SetNewTimer((fuckoff) =>
             {
-                MoveSnake(Snake);
+                MoveSnake();
             }, null, 1, interval);
 
         }

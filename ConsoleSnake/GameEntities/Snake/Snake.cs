@@ -6,15 +6,14 @@ using System.Threading.Tasks;
 
 namespace ConsoleSnake
 {
-    public class Snake : Coords
+    public static class Snake
     {
-        public int Length = 0;
-        public int[] SpeedIntervals { get; set; }
-        public Snake (int x, int y)
-        {
-            PosX = x;
-            PosY = y;
-        }
+        public static int PosX = 0;
+
+        public static int PosY = 0;
+
+        public static int Length = 0;
+        public static int[] SpeedIntervals { get; set; }
 
     }
 }
