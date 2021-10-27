@@ -34,8 +34,8 @@ namespace ConsoleSnake
             GameDisplayActions.DrawLeftBoundary();
             GameDisplayActions.DrawBottomBoundary();
 
-            Console.SetCursorPosition(40, 10);
-            Console.Write("Score: ");
+            Console.SetCursorPosition(GameDisplay.Width + 2, 2);
+            Console.Write("Score: 0");
 
             TimerAction.RepeatFruitCreationAction();
             Threads.AddToTimersCollection(TimerAction.Timer);

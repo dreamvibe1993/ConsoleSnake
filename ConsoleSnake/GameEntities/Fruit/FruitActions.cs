@@ -29,7 +29,7 @@ namespace ConsoleSnake
             FruitsCurrentlyOnDisplay.Add(Fruit);
 
             Console.SetCursorPosition(Fruit.PosX, Fruit.PosY);
-            Console.Write('§');
+            Console.Write('☻');
         }
     }
 }

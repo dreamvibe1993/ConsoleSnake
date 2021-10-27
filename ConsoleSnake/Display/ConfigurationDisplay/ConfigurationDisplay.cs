@@ -17,10 +17,10 @@ namespace ConsoleSnake
         };
 
         static Dictionary<ConsoleKey, string> Levels = new Dictionary<ConsoleKey, string>() {
-            { ConsoleKey.D1, "you chose easy" },
-            { ConsoleKey.D2, "you chose normal" },
-            { ConsoleKey.D3, "you chose hard" },
-            { ConsoleKey.D4, "you f*cking nuts man. seek help." },
+            { ConsoleKey.D1, "EASY" },
+            { ConsoleKey.D2, "NORMAL" },
+            { ConsoleKey.D3, "HARD" },
+            { ConsoleKey.D4, "NUTS MODE!" },
         };
 
         public static int[] Intervals;
@@ -47,9 +47,12 @@ namespace ConsoleSnake
             }
 
             Console.Clear();
-            Console.SetCursorPosition(2, GameDisplay.Height / 4);
-            Console.WriteLine($"{Level}");
-            Thread.Sleep(1500);
+            Console.SetCursorPosition(5, GameDisplay.Height / 4);
+            Console.WriteLine($"You chose {Level}.");
+            Console.SetCursorPosition(5, GameDisplay.Height / 4 + 1);
+            Console.SetCursorPosition(5, GameDisplay.Height / 4 + 1);
+            Console.WriteLine("TO START PRESS: \n     W || A || S || D");
+            Thread.Sleep(2500);
             Console.Clear();
 
         }

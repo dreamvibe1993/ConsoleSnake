@@ -60,7 +60,7 @@ namespace ConsoleSnake
         {
             AddToCoordsHistory();
             Console.SetCursorPosition(Snake.PosX, Snake.PosY);
-            Console.Write('*');
+            Console.Write('█');
         }
 
         public static void AddToCoordsHistory()

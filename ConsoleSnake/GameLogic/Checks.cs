@@ -59,6 +59,8 @@ namespace ConsoleSnake
             if (eatenFruit != null)
             {
                 Snake.Length++;
+                Console.SetCursorPosition(GameDisplay.Width + 2, 2);
+                Console.Write($"Score: {Snake.Length}");
                 FruitActions.FruitsCurrentlyOnDisplay.Remove(eatenFruit);
             }
         }
