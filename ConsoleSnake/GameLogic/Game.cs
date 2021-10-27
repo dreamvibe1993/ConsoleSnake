@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace ConsoleSnake
@@ -28,6 +29,7 @@ namespace ConsoleSnake
         public static void StartGame()
         {
 
+            Thread SnekThread = new Thread(InputListener.ListenWASD);
 
             GameDisplayActions.DrawTopBoundary();
             GameDisplayActions.DrawRightBoundary();
@@ -39,7 +41,7 @@ namespace ConsoleSnake
 
             TimerAction.RepeatFruitCreationAction();
             Threads.AddToTimersCollection(TimerAction.Timer);
-            InputListener.ListenWASD();
+            SnekThread.Start();
         }
     }
 }

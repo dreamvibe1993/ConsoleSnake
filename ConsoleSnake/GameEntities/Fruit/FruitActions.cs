@@ -16,10 +16,9 @@ namespace ConsoleSnake
 
             Random RandomY = new Random();
 
+            Fruit Fruit = new(RandomX.Next(1, GameDisplay.Width), RandomY.Next(2, GameDisplay.Height));
 
-            Fruit Fruit = new Fruit(RandomX.Next(1, GameDisplay.Width), RandomY.Next(2, GameDisplay.Height));
-
-            Coords IsFruitCoordsOccupated = GameDisplayActions.DrawnPointsHistory.Find((point) => Fruit.PosX == point.PosX && Fruit.PosY == point.PosY);
+            Coords IsFruitCoordsOccupated = GameDisplayActions.DrawnPointsHistory.Find((point) => Fruit.PosX == point.PosX || Fruit.PosY == point.PosY);
 
             if (IsFruitCoordsOccupated != null)
             {

@@ -15,8 +15,8 @@ namespace ConsoleSnake
         public void MoveUp()
         {
             GameDisplayActions.ErasePoint();
-            GameDisplayActions.DrawPoint();
             Snake.PosY -= 1;
+            GameDisplayActions.DrawPoint();
             Checks.CheckIfOutOfBounds();
             Checks.CheckIfAteItself();
             Checks.CheckIfAteFruit();
@@ -25,8 +25,8 @@ namespace ConsoleSnake
         public void MoveDown()
         {
             GameDisplayActions.ErasePoint();
-            GameDisplayActions.DrawPoint();
             Snake.PosY += 1;
+            GameDisplayActions.DrawPoint();
             Checks.CheckIfOutOfBounds();
             Checks.CheckIfAteItself();
             Checks.CheckIfAteFruit();
@@ -35,8 +35,8 @@ namespace ConsoleSnake
         public void MoveRight()
         {
             GameDisplayActions.ErasePoint();
-            GameDisplayActions.DrawPoint();
             Snake.PosX += 1;
+            GameDisplayActions.DrawPoint();
             Checks.CheckIfOutOfBounds();
             Checks.CheckIfAteItself();
             Checks.CheckIfAteFruit();
@@ -45,8 +45,8 @@ namespace ConsoleSnake
         public void MoveLeft()
         {
             GameDisplayActions.ErasePoint();
-            GameDisplayActions.DrawPoint();
             Snake.PosX -= 1;
+            GameDisplayActions.DrawPoint();
             Checks.CheckIfOutOfBounds();
             Checks.CheckIfAteItself();
             Checks.CheckIfAteFruit();
